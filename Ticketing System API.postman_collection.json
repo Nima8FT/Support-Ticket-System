@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "f73c2e28-3e0a-497c-83ba-daadac6d3a4d",
+		"name": "Ticketing System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26260450"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"nima\",\n    \"email\":\"nima@yahoo.com\",\n    \"password\":\"12345678\",\n    \"password_confirmation\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"nima@yahoo.com\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiIzYWFhZWQ1ZTg5OWVjNjFkOTQ4Yzc3ZjBjYzVjZTE2YzU1YWI5ZWMzZDgyNDg4YzNlZTFhZDNkMzg4MjY2MjMyN2JkNjc5NmQxNDg4NTFmMyIsImlhdCI6MTc0NTMzMDYzNC4wMjA5NDgsIm5iZiI6MTc0NTMzMDYzNC4wMjA5NDksImV4cCI6MTc3Njg2NjYzNC4wMTk2ODMsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.1WzciZzz7QRlL30FhNRlKlFS-oq594diprCa3BV3JbXTj_kjCvVFMwmPf8FWyP0ICaI_T5UHd5oTCTuUsKVaT6YrmRxCn-oX4RGykpKgKGm9L-m1sx6hSHMtyeuLeP7lp-4M9g7xc2e_dIkp6coYGf4E5JABLP1S-y70Wb9TDzXiur4uJcfLqjTrN0_Y-MDJII1ujITUEjwMZdQNjveK-9epWOMy3zHtE6bG1b2EYFBPyf8EKkTJ72NREIhN-WiguQI5jS3zDtIHRTKamyU6b2Z31TR8JwAqqYtaPx_awIW3PAdixiKaOmsJ5NNlvtB3myH-18xvmOpYKWRb3jQyONsrsLedGbOP-qzcyYkctcrFuA5_o5qW7meNwcZ0eXdRs8ecw7MFzsZ4Zim6yKCBz0GivyXoOIUb0r4Uh7xF7pmAk0BpurJLbeb5RUfE8DYs1tiTOXzMtctRWN6kWnG9WMMKubf2KRRjsbUDB0arHa0u7CZS6Vr4Q-LP68L_04PbAGZOd2Lg-ofghGqpUWML_zC8xlRm9gYmXDCkeZJLB7MRpEFus5P-PL7j_EnGhAcfzpJaGxXM-6OReUEaFktPgMWlrkdVu228cTzsRTcHyWonKWLJtr0kGObthvac2VhMo-kcbSnfPoGfmuo66BjnxitItyaoErzYsfAIp49Al48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Tickets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI5MDEyZWYyYTI1YjczYjhlZjQ0OTZiMTI5NWY0MWNlMzRkYTkzOGUxZWI0ODc2YjYxOWQ2ZTc1M2IyMGVhMDJjZjA3NjZiMGVmNDczNzQwNCIsImlhdCI6MTc0NTMzMDUwMC4yMTc3NDgsIm5iZiI6MTc0NTMzMDUwMC4yMTc3NSwiZXhwIjoxNzc2ODY2NTAwLjIxNjcwNCwic3ViIjoiMyIsInNjb3BlcyI6W119.yi60Ln-NwFHOlPukbEZH4Alk1sk7c8Og-J39ASdkYv8P-2rx7Bko7Le13MqKU8JSJmQdinx4Pp86rbZOItzEKY-WQ5f63gmGADOEaoure1mCeqiZvVYUoqevJd2hEeGX2FW9GrPZd9s5zfPPDORCmazZPs83L1V5JGQituPMlq2WqYDEzxx9bSLM14FThKBVa8Ihqa1lZf6XnJju2xyQGllon7VDrnIiqc4hmE2oySp-rR6PF0Jf72_MncvIcxV3qk9J-DNQNJDxaVPvtFRQThbM5lXb1GcV33ewaI-dkVGk0-280xXA6xxcRJCgQZ0TGTVWYQsd00rf74iqkCJhWix0edmR0bYSL0wYXZD6cOlN1BBa2P034WaC9U2V0KvCZmPo5PPOn0YFBSzqWFKSLeLAYOuwbtYKubbWvZmS8Rs77yfdY4f0ogH7vGo5Bz_XWJbQoZPU65mD7rPHC1nD4guoamjpPvB4m4Uob1KbswCsiWX0x6h_2CpUvx1tA1mz49LbmiZF2vy21jHN7wf2ztRJDvOn9cuEtf7SPATHjmznjzFzHMDeJuMa5o8IIMS-hMj1eDXFqK-TvWetRjY5NawwGWKySwySIO4udoat0XLxuwuRt9wcsXYVaXqsHe__CzhmIZbR6k-6xfKkElbnD3FaNITwr7Q4O0_qAnRdGoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI0NTYwZjU0NDQ2NDdlNDdhMzcxMTBmYmRlZjZlY2UwNjVkODZkNThlZWQyMzUzYTEzM2QzY2E3NDI1MDk3NTkwNDA5NzIxNzk1ZmM0NGVjNiIsImlhdCI6MTc0NTMzMDU2Mi41OTAzNTYsIm5iZiI6MTc0NTMzMDU2Mi41OTAzNTcsImV4cCI6MTc3Njg2NjU2Mi41ODkzOTcsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.4kpuv0lznaaPr74NK38PdvmwjBnDJYLLaGO_Bu-Ljv0dC3882N3AaVUZNHSmZqLw3as1EIEm6Z4ggTAbvYZ2abidpQa-17twEIGeXLU2bnPWS0Ex-L_CSydYSD-De4I0kvnED93eZG8Gm5Ix25GdJlb02hykOW1wVFuepzM-meiyf045XVonSSyuY8qaoGWsTF73VCpPE5X_cRX8g70EiiL1AeZ-QfmmXSZF2cIjrmXdxFXiNal3p5HZIn2VO5kG37LtwUt9_MqCNTBI2l0UTu7akTMcE_tfX5Z32YCoO0d9ULKWRGy9peuCod_E6Gn-Dh132mWNUVTZcgI5WriE4b1KnrQ1DbGIkLDEOR_LUBtB1zSf6mseHX_1RhphSVAywVfzNlX6jgqdbu05gPQSyEtJgDgkll1FVGXSCt_A0dtWVZ3rYa0TdO4fB8s2L483_3uomzztgYsimYxSYsEvCX-vF__mMYXHmz2n8uyp4eQFkJ5aTrtV_Zkz20qQXamhpils-BsdqWq2C_37Ezd52WvONcf9UVI5cTT67-Ez-scPcc8kqOsjM2xTj4QmHWgyRjUxCBO0ljq0RZV70iVO0UqknmUSUT71Ig8gnp4lIS05YR-JY32QbxcRP0rsUxaRnKxIyA-48vitXEXwk8366OT8BYoeFnwXU19SuNn4QUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"first ticket title\",\n    \"body\":\"first ticket body\",\n    \"category\":\"sport\",\n    \"priority\":\"high\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Ticket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI0NTYwZjU0NDQ2NDdlNDdhMzcxMTBmYmRlZjZlY2UwNjVkODZkNThlZWQyMzUzYTEzM2QzY2E3NDI1MDk3NTkwNDA5NzIxNzk1ZmM0NGVjNiIsImlhdCI6MTc0NTMzMDU2Mi41OTAzNTYsIm5iZiI6MTc0NTMzMDU2Mi41OTAzNTcsImV4cCI6MTc3Njg2NjU2Mi41ODkzOTcsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.4kpuv0lznaaPr74NK38PdvmwjBnDJYLLaGO_Bu-Ljv0dC3882N3AaVUZNHSmZqLw3as1EIEm6Z4ggTAbvYZ2abidpQa-17twEIGeXLU2bnPWS0Ex-L_CSydYSD-De4I0kvnED93eZG8Gm5Ix25GdJlb02hykOW1wVFuepzM-meiyf045XVonSSyuY8qaoGWsTF73VCpPE5X_cRX8g70EiiL1AeZ-QfmmXSZF2cIjrmXdxFXiNal3p5HZIn2VO5kG37LtwUt9_MqCNTBI2l0UTu7akTMcE_tfX5Z32YCoO0d9ULKWRGy9peuCod_E6Gn-Dh132mWNUVTZcgI5WriE4b1KnrQ1DbGIkLDEOR_LUBtB1zSf6mseHX_1RhphSVAywVfzNlX6jgqdbu05gPQSyEtJgDgkll1FVGXSCt_A0dtWVZ3rYa0TdO4fB8s2L483_3uomzztgYsimYxSYsEvCX-vF__mMYXHmz2n8uyp4eQFkJ5aTrtV_Zkz20qQXamhpils-BsdqWq2C_37Ezd52WvONcf9UVI5cTT67-Ez-scPcc8kqOsjM2xTj4QmHWgyRjUxCBO0ljq0RZV70iVO0UqknmUSUT71Ig8gnp4lIS05YR-JY32QbxcRP0rsUxaRnKxIyA-48vitXEXwk8366OT8BYoeFnwXU19SuNn4QUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket/13",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI5MDEyZWYyYTI1YjczYjhlZjQ0OTZiMTI5NWY0MWNlMzRkYTkzOGUxZWI0ODc2YjYxOWQ2ZTc1M2IyMGVhMDJjZjA3NjZiMGVmNDczNzQwNCIsImlhdCI6MTc0NTMzMDUwMC4yMTc3NDgsIm5iZiI6MTc0NTMzMDUwMC4yMTc3NSwiZXhwIjoxNzc2ODY2NTAwLjIxNjcwNCwic3ViIjoiMyIsInNjb3BlcyI6W119.yi60Ln-NwFHOlPukbEZH4Alk1sk7c8Og-J39ASdkYv8P-2rx7Bko7Le13MqKU8JSJmQdinx4Pp86rbZOItzEKY-WQ5f63gmGADOEaoure1mCeqiZvVYUoqevJd2hEeGX2FW9GrPZd9s5zfPPDORCmazZPs83L1V5JGQituPMlq2WqYDEzxx9bSLM14FThKBVa8Ihqa1lZf6XnJju2xyQGllon7VDrnIiqc4hmE2oySp-rR6PF0Jf72_MncvIcxV3qk9J-DNQNJDxaVPvtFRQThbM5lXb1GcV33ewaI-dkVGk0-280xXA6xxcRJCgQZ0TGTVWYQsd00rf74iqkCJhWix0edmR0bYSL0wYXZD6cOlN1BBa2P034WaC9U2V0KvCZmPo5PPOn0YFBSzqWFKSLeLAYOuwbtYKubbWvZmS8Rs77yfdY4f0ogH7vGo5Bz_XWJbQoZPU65mD7rPHC1nD4guoamjpPvB4m4Uob1KbswCsiWX0x6h_2CpUvx1tA1mz49LbmiZF2vy21jHN7wf2ztRJDvOn9cuEtf7SPATHjmznjzFzHMDeJuMa5o8IIMS-hMj1eDXFqK-TvWetRjY5NawwGWKySwySIO4udoat0XLxuwuRt9wcsXYVaXqsHe__CzhmIZbR6k-6xfKkElbnD3FaNITwr7Q4O0_qAnRdGoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\":\"closed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket/13",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Ticket Response",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI5MDEyZWYyYTI1YjczYjhlZjQ0OTZiMTI5NWY0MWNlMzRkYTkzOGUxZWI0ODc2YjYxOWQ2ZTc1M2IyMGVhMDJjZjA3NjZiMGVmNDczNzQwNCIsImlhdCI6MTc0NTMzMDUwMC4yMTc3NDgsIm5iZiI6MTc0NTMzMDUwMC4yMTc3NSwiZXhwIjoxNzc2ODY2NTAwLjIxNjcwNCwic3ViIjoiMyIsInNjb3BlcyI6W119.yi60Ln-NwFHOlPukbEZH4Alk1sk7c8Og-J39ASdkYv8P-2rx7Bko7Le13MqKU8JSJmQdinx4Pp86rbZOItzEKY-WQ5f63gmGADOEaoure1mCeqiZvVYUoqevJd2hEeGX2FW9GrPZd9s5zfPPDORCmazZPs83L1V5JGQituPMlq2WqYDEzxx9bSLM14FThKBVa8Ihqa1lZf6XnJju2xyQGllon7VDrnIiqc4hmE2oySp-rR6PF0Jf72_MncvIcxV3qk9J-DNQNJDxaVPvtFRQThbM5lXb1GcV33ewaI-dkVGk0-280xXA6xxcRJCgQZ0TGTVWYQsd00rf74iqkCJhWix0edmR0bYSL0wYXZD6cOlN1BBa2P034WaC9U2V0KvCZmPo5PPOn0YFBSzqWFKSLeLAYOuwbtYKubbWvZmS8Rs77yfdY4f0ogH7vGo5Bz_XWJbQoZPU65mD7rPHC1nD4guoamjpPvB4m4Uob1KbswCsiWX0x6h_2CpUvx1tA1mz49LbmiZF2vy21jHN7wf2ztRJDvOn9cuEtf7SPATHjmznjzFzHMDeJuMa5o8IIMS-hMj1eDXFqK-TvWetRjY5NawwGWKySwySIO4udoat0XLxuwuRt9wcsXYVaXqsHe__CzhmIZbR6k-6xfKkElbnD3FaNITwr7Q4O0_qAnRdGoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket-responses",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket-responses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket Response",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI0NTYwZjU0NDQ2NDdlNDdhMzcxMTBmYmRlZjZlY2UwNjVkODZkNThlZWQyMzUzYTEzM2QzY2E3NDI1MDk3NTkwNDA5NzIxNzk1ZmM0NGVjNiIsImlhdCI6MTc0NTMzMDU2Mi41OTAzNTYsIm5iZiI6MTc0NTMzMDU2Mi41OTAzNTcsImV4cCI6MTc3Njg2NjU2Mi41ODkzOTcsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.4kpuv0lznaaPr74NK38PdvmwjBnDJYLLaGO_Bu-Ljv0dC3882N3AaVUZNHSmZqLw3as1EIEm6Z4ggTAbvYZ2abidpQa-17twEIGeXLU2bnPWS0Ex-L_CSydYSD-De4I0kvnED93eZG8Gm5Ix25GdJlb02hykOW1wVFuepzM-meiyf045XVonSSyuY8qaoGWsTF73VCpPE5X_cRX8g70EiiL1AeZ-QfmmXSZF2cIjrmXdxFXiNal3p5HZIn2VO5kG37LtwUt9_MqCNTBI2l0UTu7akTMcE_tfX5Z32YCoO0d9ULKWRGy9peuCod_E6Gn-Dh132mWNUVTZcgI5WriE4b1KnrQ1DbGIkLDEOR_LUBtB1zSf6mseHX_1RhphSVAywVfzNlX6jgqdbu05gPQSyEtJgDgkll1FVGXSCt_A0dtWVZ3rYa0TdO4fB8s2L483_3uomzztgYsimYxSYsEvCX-vF__mMYXHmz2n8uyp4eQFkJ5aTrtV_Zkz20qQXamhpils-BsdqWq2C_37Ezd52WvONcf9UVI5cTT67-Ez-scPcc8kqOsjM2xTj4QmHWgyRjUxCBO0ljq0RZV70iVO0UqknmUSUT71Ig8gnp4lIS05YR-JY32QbxcRP0rsUxaRnKxIyA-48vitXEXwk8366OT8BYoeFnwXU19SuNn4QUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticket_id\":14,\n    \"response_body\":\"reply ticket for admin\",\n    \"parent_response_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket-responses",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket-responses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Ticket Response",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5ZWJjNjE4MC02YjA3LTRkYTUtOGZhMy1jYTBiZjc1OGNhYTUiLCJqdGkiOiI0NTYwZjU0NDQ2NDdlNDdhMzcxMTBmYmRlZjZlY2UwNjVkODZkNThlZWQyMzUzYTEzM2QzY2E3NDI1MDk3NTkwNDA5NzIxNzk1ZmM0NGVjNiIsImlhdCI6MTc0NTMzMDU2Mi41OTAzNTYsIm5iZiI6MTc0NTMzMDU2Mi41OTAzNTcsImV4cCI6MTc3Njg2NjU2Mi41ODkzOTcsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.4kpuv0lznaaPr74NK38PdvmwjBnDJYLLaGO_Bu-Ljv0dC3882N3AaVUZNHSmZqLw3as1EIEm6Z4ggTAbvYZ2abidpQa-17twEIGeXLU2bnPWS0Ex-L_CSydYSD-De4I0kvnED93eZG8Gm5Ix25GdJlb02hykOW1wVFuepzM-meiyf045XVonSSyuY8qaoGWsTF73VCpPE5X_cRX8g70EiiL1AeZ-QfmmXSZF2cIjrmXdxFXiNal3p5HZIn2VO5kG37LtwUt9_MqCNTBI2l0UTu7akTMcE_tfX5Z32YCoO0d9ULKWRGy9peuCod_E6Gn-Dh132mWNUVTZcgI5WriE4b1KnrQ1DbGIkLDEOR_LUBtB1zSf6mseHX_1RhphSVAywVfzNlX6jgqdbu05gPQSyEtJgDgkll1FVGXSCt_A0dtWVZ3rYa0TdO4fB8s2L483_3uomzztgYsimYxSYsEvCX-vF__mMYXHmz2n8uyp4eQFkJ5aTrtV_Zkz20qQXamhpils-BsdqWq2C_37Ezd52WvONcf9UVI5cTT67-Ez-scPcc8kqOsjM2xTj4QmHWgyRjUxCBO0ljq0RZV70iVO0UqknmUSUT71Ig8gnp4lIS05YR-JY32QbxcRP0rsUxaRnKxIyA-48vitXEXwk8366OT8BYoeFnwXU19SuNn4QUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tickets/ticket-responses/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickets",
+						"ticket-responses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
