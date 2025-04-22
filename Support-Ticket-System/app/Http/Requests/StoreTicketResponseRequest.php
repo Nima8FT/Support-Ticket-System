@@ -11,7 +11,7 @@ class StoreTicketResponseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreTicketResponseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'ticket_id' => 'required|exists:tickets,id',
+            'response_body' => 'required|string|min:5',
+            'parent_response_id' => 'nullable|exists:ticket_responses,id',
         ];
     }
 }

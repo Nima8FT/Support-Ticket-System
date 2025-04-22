@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tickets', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('ticket_responses', function (Blueprint $table) {
+            $table->enum('status', ['in_progress', 'answered', 'closed'])->default('in_progress')->after('parent_response_id');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tickets');
+        Schema::table('ticket_responses', function (Blueprint $table) {
+            //
+        });
     }
 };

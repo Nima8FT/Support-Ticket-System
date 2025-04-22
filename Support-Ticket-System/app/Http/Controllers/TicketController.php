@@ -23,7 +23,13 @@ class TicketController extends Controller
     public function index()
     {
         try {
-            $tickets = Ticket::with('user:email')->latest()->paginate(5);
+            $tickets = Ticket::latest()->paginate(5);
+            if ($this->user->role !== 'admin') {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'You do not have permission to perform this action.'
+                ], 403);
+            }
             return response()->json([
                 'status' => 'success',
                 'data' => $tickets
@@ -117,7 +123,7 @@ class TicketController extends Controller
             return response()->json([
                 'status' => 'success',
                 'data' => $ticket
-            ], 200);  // 200 OK status code
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 'error',

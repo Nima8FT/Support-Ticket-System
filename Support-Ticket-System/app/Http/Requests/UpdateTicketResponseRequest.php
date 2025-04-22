@@ -11,7 +11,7 @@ class UpdateTicketResponseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateTicketResponseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'status' => 'in:closed',
+            'response_body' => 'string|min:10',
         ];
     }
 }
