@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Ticket;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\TicketResource;
 use App\Http\Requests\StoreTicketRequest;
 use App\Http\Requests\UpdateTicketRequest;
 
@@ -24,6 +25,7 @@ class TicketController extends Controller
     {
         try {
             $tickets = Ticket::latest()->paginate(5);
+            $ticket_resource = TicketResource::collection($tickets);
             if ($this->user->role !== 'admin') {
                 return response()->json([
                     'status' => 'error',
@@ -32,7 +34,7 @@ class TicketController extends Controller
             }
             return response()->json([
                 'status' => 'success',
-                'data' => $tickets
+                'data' => $ticket_resource
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
@@ -82,9 +84,11 @@ class TicketController extends Controller
     public function show(Ticket $ticket)
     {
         try {
+            $ticket->load('user');
+            $ticket_resource = new TicketResource($ticket);
             return response()->json([
                 'status' => 'success',
-                'data' => $ticket
+                'data' => $ticket_resource
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
