@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,10 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
+});
+
+
+//route for ticket system
+Route::group(['prefix' => 'tickets', 'middleware' => 'auth:api'], function () {
+    Route::resource('ticket', TicketController::class);
 });
