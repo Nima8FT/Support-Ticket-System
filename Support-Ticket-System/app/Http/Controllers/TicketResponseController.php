@@ -122,7 +122,7 @@ class TicketResponseController extends Controller
     public function update(UpdateTicketResponseRequest $request, TicketResponse $ticketResponse)
     {
         try {
-            $inputs = $request->only('status', 'response_body');
+            $inputs = $request->only('status');
 
             if ($this->user->role !== 'admin') {
                 return response()->json([

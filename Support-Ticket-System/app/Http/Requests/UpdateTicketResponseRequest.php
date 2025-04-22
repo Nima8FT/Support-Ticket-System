@@ -23,7 +23,6 @@ class UpdateTicketResponseRequest extends FormRequest
     {
         return [
             'status' => 'in:closed',
-            'response_body' => 'string|min:10',
         ];
     }
 }
