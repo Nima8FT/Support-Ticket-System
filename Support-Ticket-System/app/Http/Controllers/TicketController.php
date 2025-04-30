@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Ticket;
+use App\Events\TicketCreated;
 use App\Mail\CreateTicketMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -67,7 +68,8 @@ class TicketController extends Controller
 
             $ticket = Ticket::create($inputs);
 
-            SendTicketCreationEmail::dispatch($this->user->email);
+            TicketCreated::dispatch($ticket);
+            // SendTicketCreationEmail::dispatch($this->user->email);
 
             return response()->json([
                 'status' => 'success',
